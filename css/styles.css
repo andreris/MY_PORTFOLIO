@@ -32,7 +32,7 @@ body[data-page="home"] .theme-button{justify-self:auto}
 .sql-intro{grid-area:copy;min-width:0}
 .sql-title{display:grid;gap:3px;margin:0;font:800 clamp(2rem,3.2vw,3.15rem)/1.08 Consolas,"Courier New",monospace;letter-spacing:-.075em}
 .sql-title span{display:block;white-space:nowrap}
-.sql-title b,.sql-title i{display:inline-block;min-width:3.2em;font-style:normal;color:var(--sql-blue)}
+.sql-title b,.sql-title i{display:inline-block;min-width:0;margin-right:.32em;font-style:normal;color:var(--sql-blue)}
 .sql-title i{color:var(--sql-muted)}
 .sql-summary{max-width:610px;margin:24px 0 0;color:color-mix(in srgb,var(--home-ink) 65%,transparent);font-size:1rem}
 .hero-controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:76px}
@@ -80,7 +80,7 @@ body.dark .machine-feet i{background:#071018}
   body[data-page="home"] .site-header{grid-template-columns:1fr auto auto}
   .header-tools{gap:7px}
   .portfolio-hero__inner{grid-template-columns:1fr;grid-template-areas:"copy" "coffee" "status";gap:28px;max-width:780px;padding-block:58px 38px}
-  .sql-intro{text-align:center}.sql-summary{margin-inline:auto}.hero-controls{justify-content:center}
+  .sql-intro{text-align:left}.sql-summary{margin-inline:0}.hero-controls{justify-content:center}
   .coffee-scene{width:100%}.pixel-machine{width:min(82vw,350px)}
 }
 @media(max-width:820px){
@@ -90,7 +90,7 @@ body.dark .machine-feet i{background:#071018}
 @media(max-width:540px){
   .portfolio-hero__inner{width:min(100% - 24px,760px);padding-inline:0}
   .sql-title{font-size:clamp(1.38rem,6.7vw,2rem);letter-spacing:-.065em}
-  .sql-title b,.sql-title i{min-width:3.08em}
+  .sql-title b,.sql-title i{min-width:0;margin-right:.32em}
   .sql-summary{font-size:.91rem}
   .hero-controls{display:grid;grid-template-columns:1fr 1fr}
   .console-button{width:100%;padding-inline:8px;font-size:.78rem}
