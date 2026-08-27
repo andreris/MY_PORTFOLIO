@@ -699,3 +699,42 @@ body[data-page="home"] .home-contact__form .submit-button:disabled{cursor:wait;o
   body[data-page="home"] .home-contact__intro h2{font-size:clamp(2.8rem,14vw,4rem)}
   body[data-page="home"] .home-contact__form{padding:28px 18px;box-shadow:7px 7px 0 var(--home-ink)}
 }
+
+
+/* Section title hover, lower project link and universal footer */
+body[data-page="home"] .section-heading h2,
+body[data-page="home"] .stack-intro h2,
+body[data-page="home"] .home-contact__intro h2,
+body[data-page="projects"] .page-heading h1,
+body[data-page="about"] .about-copy h1,
+body[data-page="contact"] .contact-intro h1,
+body[data-page="knowledge"] .knowledge-heading h1{
+  transition:color .22s ease
+}
+body[data-page="home"] .section-heading h2:hover,
+body[data-page="home"] .stack-intro h2:hover,
+body[data-page="home"] .home-contact__intro h2:hover,
+body[data-page="projects"] .page-heading h1:hover,
+body[data-page="about"] .about-copy h1:hover,
+body[data-page="contact"] .contact-intro h1:hover,
+body[data-page="knowledge"] .knowledge-heading h1:hover{
+  color:#fff500
+}
+body[data-page="home"] .projects-more{
+  display:block;width:max-content;margin:30px auto 0;padding:12px 18px;
+  border:2px solid var(--home-ink);background:var(--signal);color:#080808;
+  font:800 .8rem/1 Consolas,monospace
+}
+body[data-page="home"] .projects-more:hover{
+  background:#080808;color:#fff500;border-color:#080808
+}
+.site-footer,
+body[data-page="home"] .site-footer,
+body[data-page="projects"] .site-footer,
+body[data-page="about"] .site-footer,
+body[data-page="contact"] .site-footer,
+body[data-page="knowledge"] .site-footer{
+  background:#080808!important;color:#fff500!important;border-color:#080808!important
+}
+.site-footer a{color:#fff500!important}
+.site-footer a:hover{color:#fff!important}
