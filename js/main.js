@@ -96,6 +96,55 @@ document.querySelectorAll('.details-button').forEach(button => {
 });
 
 
+/* Contact form: real delivery with inline status */
+const contactForm = document.querySelector('#contact-form');
+
+contactForm?.addEventListener('submit', async event => {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const submitButton = form.querySelector('.submit-button');
+  const originalLabel = 'Enviar correo';
+  const payload = Object.fromEntries(new FormData(form).entries());
+
+  submitButton.disabled = true;
+  submitButton.setAttribute('aria-busy', 'true');
+  submitButton.textContent = 'Enviando…';
+
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/andre.rivera108@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) throw new Error('No se pudo enviar el formulario');
+
+    form.reset();
+    submitButton.textContent = '✓ Correo enviado';
+    submitButton.classList.add('is-sent');
+
+    window.setTimeout(() => {
+      submitButton.textContent = originalLabel;
+      submitButton.classList.remove('is-sent');
+      submitButton.disabled = false;
+      submitButton.removeAttribute('aria-busy');
+    }, 5000);
+  } catch (error) {
+    submitButton.textContent = 'Error — reintentar';
+    submitButton.disabled = false;
+    submitButton.removeAttribute('aria-busy');
+
+    window.setTimeout(() => {
+      submitButton.textContent = originalLabel;
+    }, 5000);
+  }
+});
+
+
 /* Home runtime: Lima clock and coffee pipeline */
 const limaClock = document.querySelector('#lima-time');
 
