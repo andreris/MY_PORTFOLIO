@@ -3,7 +3,14 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Proyectos de Data Engineering de André Rivera.">
-  <title>Proyectos | André Rivera</title><link rel="stylesheet" href="css/styles.css?v=20260827l"><script src="js/main.js?v=20260827d" defer></script>
+  <title>Proyectos | André Rivera</title><link rel="canonical" href="https://andreris.github.io/MY_PORTFOLIO/proyectos.html"><link rel="stylesheet" href="css/styles.css?v=20260827l"><script src="js/main.js?v=20260827d" defer></script>
+  <script>
+    if (new URL(window.location.href).searchParams.has('v')) {
+      const cleanUrl = new URL(window.location.href);
+      cleanUrl.searchParams.delete('v');
+      history.replaceState(null, '', cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
+    }
+  </script>
 </head>
 <body data-page="projects">
   <header class="site-header">
