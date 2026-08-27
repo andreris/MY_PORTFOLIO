@@ -813,3 +813,21 @@ body[data-page="home"] .projects-more:hover{
   color:#fff500;
   border-color:#080808
 }
+
+
+/* Monochrome cloud platform marks */
+body[data-page="home"] .cloud-logos{
+  display:flex;align-items:center;gap:13px;width:max-content;max-width:100%;
+  padding:8px 11px;border:1px solid #080808;background:#f7f4ea;color:#080808
+}
+body[data-page="home"] .cloud-logo{display:inline-flex;align-items:center;color:#080808}
+body[data-page="home"] .aws-mark{position:relative;display:grid;justify-items:center;width:55px}
+body[data-page="home"] .aws-word{font:900 1.25rem/.8 Arial,sans-serif;letter-spacing:-.08em}
+body[data-page="home"] .aws-mark svg{width:52px;height:11px;margin-top:2px}
+body[data-page="home"] .gcp-mark,
+body[data-page="home"] .azure-mark{gap:4px;font:900 .63rem/1 Arial,sans-serif;letter-spacing:-.02em}
+body[data-page="home"] .gcp-mark svg{width:29px;height:24px}
+body[data-page="home"] .azure-mark svg{width:25px;height:25px}
+@media(max-width:540px){
+  body[data-page="home"] .cloud-logos{gap:9px;padding:7px 8px;transform:scale(.92);transform-origin:left center}
+}
