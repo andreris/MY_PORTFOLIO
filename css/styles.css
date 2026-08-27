@@ -756,3 +756,51 @@ body[data-page="home"] .letter-hover-title .hover-char:hover{
 @media(prefers-reduced-motion:reduce){
   body[data-page="home"] .letter-hover-title .hover-char{transition:none}
 }
+
+
+/* Shared raised hover for every rectangular action */
+:is(
+  .console-button,
+  .button,
+  .filter,
+  .cert-more,
+  .projects-more,
+  .cert-proof,
+  .knowledge-contact > a
+){
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background-color .22s ease,
+    color .22s ease,
+    border-color .22s ease
+}
+:is(
+  .console-button,
+  .button,
+  .filter,
+  .cert-more,
+  .projects-more,
+  .cert-proof,
+  .knowledge-contact > a
+):hover:not(:disabled):not([aria-disabled="true"]){
+  transform:translate(-2px,-2px);
+  box-shadow:4px 4px 0 var(--home-ink)
+}
+:is(
+  .console-button,
+  .button,
+  .filter,
+  .cert-more,
+  .projects-more,
+  .cert-proof,
+  .knowledge-contact > a
+):active:not(:disabled):not([aria-disabled="true"]){
+  transform:translate(0,0);
+  box-shadow:0 0 0 var(--home-ink)
+}
+@media(prefers-reduced-motion:reduce){
+  :is(.console-button,.button,.filter,.cert-more,.projects-more,.cert-proof,.knowledge-contact > a){
+    transition:none
+  }
+}
