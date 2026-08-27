@@ -103,3 +103,21 @@ body.dark .machine-feet i{background:#071018}
   .pixel-machine{width:285px}
 }
 @media(prefers-reduced-motion:reduce){body.theme-wipe::after,.pixel-machine.is-brewing .coffee-drip,.pixel-machine.is-done .steam{animation:none}.coffee-liquid{transition:none}}
+
+
+/* Mobile hero centering and compact controls */
+@media(max-width:1050px){
+  .sql-intro{width:max-content;max-width:100%;margin-inline:auto;text-align:left}
+}
+@media(max-width:640px){
+  .portfolio-hero__inner{gap:18px;min-height:calc(100svh - 76px);padding-block:38px 24px}
+  .hero-controls{grid-template-columns:1fr;width:min(100%,270px);margin:38px auto 0}
+  .pixel-machine{width:min(72vw,298px)}
+  .runtime-status{margin-top:7px}
+}
+@media(max-width:540px){
+  .pixel-machine{width:min(75vw,272px)}
+}
+@media(max-width:360px){
+  .pixel-machine{width:min(78vw,255px)}
+}
