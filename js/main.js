@@ -307,3 +307,65 @@ function runCoffee() {
 }
 
 coffeeButton?.addEventListener('click', runCoffee);
+
+/* Custom cursor: black dot that flashes yellow with sun-ray sparkles on click */
+(function initCustomCursor() {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const cursorDot = document.createElement('div');
+  cursorDot.className = 'custom-cursor';
+  document.body.appendChild(cursorDot);
+  document.body.classList.add('has-custom-cursor');
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let visible = false;
+
+  window.addEventListener('mousemove', event => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+    cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    if (!visible) {
+      visible = true;
+      cursorDot.style.opacity = '1';
+    }
+  }, { passive: true });
+
+  window.addEventListener('mouseleave', () => {
+    visible = false;
+    cursorDot.style.opacity = '0';
+  });
+
+  function spawnSparkles(x, y) {
+    const burst = document.createElement('div');
+    burst.className = 'cursor-burst';
+    burst.style.left = `${x}px`;
+    burst.style.top = `${y}px`;
+
+    const rayCount = 8;
+    for (let i = 0; i < rayCount; i++) {
+      const ray = document.createElement('span');
+      ray.className = 'cursor-ray';
+      ray.style.setProperty('--r', `${(360 / rayCount) * i}deg`);
+      burst.appendChild(ray);
+    }
+
+    document.body.appendChild(burst);
+    window.setTimeout(() => burst.remove(), 500);
+  }
+
+  window.addEventListener('mousedown', event => {
+    cursorDot.classList.add('is-active');
+    spawnSparkles(event.clientX, event.clientY);
+  });
+
+  window.addEventListener('mouseup', () => {
+    cursorDot.classList.remove('is-active');
+  });
+
+  document.querySelectorAll('a, button, .filter, .cert-proof, input, textarea, select, label').forEach(el => {
+    el.addEventListener('mouseenter', () => cursorDot.classList.add('is-hover'));
+    el.addEventListener('mouseleave', () => cursorDot.classList.remove('is-hover'));
+  });
+})();

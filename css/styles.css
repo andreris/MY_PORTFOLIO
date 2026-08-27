@@ -806,13 +806,7 @@ body[data-page="home"] .letter-hover-title .hover-char:hover{
 }
 
 
-/* Permanent black Projects link */
-body[data-page="home"] .projects-more,
-body[data-page="home"] .projects-more:hover{
-  background:#080808;
-  color:#fff500;
-  border-color:#080808
-}
+
 
 
 /* Monochrome cloud platform marks */
@@ -901,4 +895,49 @@ body[data-page="home"] .stats article:nth-child(3) > strong{
 @media(max-width:390px){
   body[data-page="home"] .stats article:nth-child(2) > .cloud-logos{transform:scale(1.4)}
   body[data-page="home"] .stats article:nth-child(3) > strong{font-size:2.45rem}
+}
+
+/* Custom cursor: black dot that flashes yellow with sun-ray sparkles on click */
+body.has-custom-cursor,
+body.has-custom-cursor a,
+body.has-custom-cursor button,
+body.has-custom-cursor input,
+body.has-custom-cursor textarea,
+body.has-custom-cursor select,
+body.has-custom-cursor label{cursor:none}
+.custom-cursor{
+  position:fixed;top:0;left:0;z-index:9999;
+  width:12px;height:12px;margin:-6px 0 0 -6px;
+  background:#080808;border-radius:50%;
+  pointer-events:none;opacity:0;
+  transition:opacity .2s ease,background .18s ease,width .18s ease,height .18s ease,margin .18s ease;
+  will-change:transform;
+}
+.custom-cursor.is-hover{
+  width:22px;height:22px;margin:-11px 0 0 -11px;
+  background:rgba(8,8,8,.75);
+}
+.custom-cursor.is-active{
+  width:14px;height:14px;margin:-7px 0 0 -7px;
+  background:var(--signal,#fff500);
+  box-shadow:0 0 0 3px rgba(255,245,0,.35);
+}
+.cursor-burst{
+  position:fixed;top:0;left:0;z-index:9998;
+  width:0;height:0;pointer-events:none;
+}
+.cursor-ray{
+  position:absolute;top:0;left:0;
+  width:3px;height:22px;margin:-11px 0 0 -1.5px;
+  background:var(--signal,#fff500);
+  border-radius:2px;
+  transform-origin:center 11px;
+  animation:cursor-ray-burst .5s ease-out forwards;
+}
+@keyframes cursor-ray-burst{
+  0%{opacity:1;transform:rotate(var(--r,0deg)) translateY(-4px) scaleY(.3)}
+  100%{opacity:0;transform:rotate(var(--r,0deg)) translateY(-22px) scaleY(1)}
+}
+@media(hover:none),(pointer:coarse){
+  .custom-cursor,.cursor-burst{display:none}
 }
