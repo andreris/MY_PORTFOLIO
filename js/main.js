@@ -3,7 +3,7 @@ const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('.site-nav');
 const themeButton = document.querySelector('.theme-button');
 
-const pages = { home: 'index.html', projects: 'proyectos.html', about: 'sobre-mi.html', contact: 'contacto.html' };
+const pages = { home: 'index.html', projects: 'proyectos.html', about: 'sobre-mi.html', knowledge: 'knowledge.html', contact: 'contacto.html' };
 document.querySelectorAll('.site-nav a').forEach(link => {
   if (link.getAttribute('href') === pages[body.dataset.page]) link.classList.add('active');
 });
