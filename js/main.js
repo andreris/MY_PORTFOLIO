@@ -35,7 +35,7 @@ function renderTheme() {
   if (themeStatus) themeStatus.textContent = dark ? 'TRUE' : 'FALSE';
 }
 
-function setTheme(nextDark, animate = true) {
+function setTheme(nextDark, animate = true, sourceButton = null) {
   if (body.classList.contains('dark') === nextDark) {
     renderTheme();
     return;
@@ -51,17 +51,23 @@ function setTheme(nextDark, animate = true) {
     return;
   }
 
+  const sourceRect = sourceButton?.getBoundingClientRect();
+  const originX = sourceRect ? sourceRect.left + sourceRect.width / 2 : window.innerWidth / 2;
+  const originY = sourceRect ? sourceRect.top + sourceRect.height / 2 : window.innerHeight / 2;
+
+  body.style.setProperty('--theme-wipe-x', originX + 'px');
+  body.style.setProperty('--theme-wipe-y', originY + 'px');
   body.style.setProperty('--theme-wipe-color', nextDark ? '#071018' : '#e3decf');
   body.classList.remove('theme-wipe');
   void body.offsetWidth;
   body.classList.add('theme-wipe');
-  window.setTimeout(applyTheme, 430);
-  window.setTimeout(() => body.classList.remove('theme-wipe'), 850);
+  window.setTimeout(applyTheme, 620);
+  window.setTimeout(() => body.classList.remove('theme-wipe'), 1020);
 }
 
 setTheme(localStorage.getItem('portfolio-theme') === 'dark', false);
-themeButton?.addEventListener('click', () => setTheme(!body.classList.contains('dark')));
-runModeButton?.addEventListener('click', () => setTheme(!body.classList.contains('dark')));
+themeButton?.addEventListener('click', event => setTheme(!body.classList.contains('dark'), true, event.currentTarget));
+runModeButton?.addEventListener('click', event => setTheme(!body.classList.contains('dark'), true, event.currentTarget));
 
 document.querySelectorAll('[data-year]').forEach(element => element.textContent = new Date().getFullYear());
 
@@ -135,12 +141,13 @@ function renderCoffee(value) {
 }
 
 function runCoffee() {
-  if (!coffeeMachine || !coffeeButton) return;
+  if (!coffeeMachine || !coffeeButton || coffeeMachine.dataset.coffeeState === 'brewing') return;
   window.cancelAnimationFrame(coffeeFrame);
   coffeeMachine.classList.remove('is-done');
   coffeeMachine.classList.add('is-brewing');
   coffeeMachine.dataset.coffeeState = 'brewing';
   coffeeButton.setAttribute('aria-busy', 'true');
+  coffeeButton.disabled = true;
   renderCoffee(0);
 
   if (reduceMotion.matches) {
@@ -149,6 +156,7 @@ function runCoffee() {
     coffeeMachine.classList.add('is-done');
     coffeeMachine.dataset.coffeeState = 'ready';
     coffeeButton.removeAttribute('aria-busy');
+    coffeeButton.disabled = false;
     return;
   }
 
@@ -168,6 +176,7 @@ function runCoffee() {
     coffeeMachine.classList.add('is-done');
     coffeeMachine.dataset.coffeeState = 'ready';
     coffeeButton.removeAttribute('aria-busy');
+    coffeeButton.disabled = false;
   }
 
   coffeeFrame = window.requestAnimationFrame(brewFrame);
