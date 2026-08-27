@@ -1,3 +1,70 @@
+/* Custom cursor: black dot that flashes yellow with sun-ray sparkles on click */
+(function initCustomCursor() {
+  try {
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const cursorDot = document.createElement('div');
+    cursorDot.className = 'custom-cursor';
+    document.body.appendChild(cursorDot);
+    document.body.classList.add('has-custom-cursor');
+
+    let visible = false;
+
+    window.addEventListener('mousemove', event => {
+      cursorDot.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+      if (!visible) {
+        visible = true;
+        cursorDot.style.opacity = '1';
+      }
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      visible = false;
+      cursorDot.style.opacity = '0';
+    });
+
+    function spawnSparkles(x, y) {
+      const burst = document.createElement('div');
+      burst.className = 'cursor-burst';
+      burst.style.left = `${x}px`;
+      burst.style.top = `${y}px`;
+
+      const rayCount = 8;
+      for (let i = 0; i < rayCount; i++) {
+        const ray = document.createElement('span');
+        ray.className = 'cursor-ray';
+        ray.style.setProperty('--r', `${(360 / rayCount) * i}deg`);
+        burst.appendChild(ray);
+      }
+
+      document.body.appendChild(burst);
+      window.setTimeout(() => burst.remove(), 500);
+    }
+
+    window.addEventListener('mousedown', event => {
+      cursorDot.classList.add('is-active');
+      spawnSparkles(event.clientX, event.clientY);
+    });
+
+    window.addEventListener('mouseup', () => {
+      cursorDot.classList.remove('is-active');
+    });
+
+    document.addEventListener('mouseover', event => {
+      if (event.target.closest('a, button, .filter, .cert-proof, input, textarea, select, label')) {
+        cursorDot.classList.add('is-hover');
+      }
+    });
+    document.addEventListener('mouseout', event => {
+      if (event.target.closest('a, button, .filter, .cert-proof, input, textarea, select, label')) {
+        cursorDot.classList.remove('is-hover');
+      }
+    });
+  } catch (err) {
+    console.warn('Custom cursor no pudo iniciar:', err);
+  }
+})();
 const body = document.body;
 const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('.site-nav');
