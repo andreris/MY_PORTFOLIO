@@ -130,8 +130,11 @@ const coffeePercent = document.querySelector('.coffee-percent');
 const coffeeProgress = document.querySelector('.coffee-progress span');
 const coffeeLiquid = document.querySelector('.coffee-liquid');
 let coffeeFrame = 0;
+let readyLabelTimer = 0;
 let serveStartTimer = 0;
+let coffeeGrabTimer = 0;
 let serveEndTimer = 0;
+let newCupTimer = 0;
 
 function renderCoffee(value) {
   const percentage = Math.max(0, Math.min(100, Math.round(value)));
@@ -142,13 +145,17 @@ function renderCoffee(value) {
   if (coffeeButton) coffeeButton.textContent = percentage < 100 ? '› Brewing ' + padded + '%' : '› Coffee ready';
 }
 
+function resetMachineDisplay() {
+  if (coffeePercent) coffeePercent.textContent = '000%';
+  if (coffeeProgress) coffeeProgress.style.width = '0%';
+}
+
 function runCoffee() {
   if (!coffeeMachine || !coffeeButton || ['brewing', 'ready', 'serving'].includes(coffeeMachine.dataset.coffeeState)) return;
 
   window.cancelAnimationFrame(coffeeFrame);
-  window.clearTimeout(serveStartTimer);
-  window.clearTimeout(serveEndTimer);
-  coffeeMachine.classList.remove('is-done', 'is-serving', 'is-served');
+  [readyLabelTimer, serveStartTimer, coffeeGrabTimer, serveEndTimer, newCupTimer].forEach(window.clearTimeout);
+  coffeeMachine.classList.remove('is-done', 'is-serving', 'is-served', 'is-new-cup');
   coffeeMachine.classList.add('is-brewing');
   coffeeMachine.dataset.coffeeState = 'brewing';
   coffeeButton.setAttribute('aria-busy', 'true');
@@ -157,6 +164,7 @@ function runCoffee() {
 
   if (reduceMotion.matches) {
     renderCoffee(100);
+    if (coffeePercent) coffeePercent.textContent = 'READY';
     coffeeMachine.classList.remove('is-brewing');
     coffeeMachine.classList.add('is-done');
     coffeeMachine.dataset.coffeeState = 'served';
@@ -183,21 +191,34 @@ function runCoffee() {
     coffeeMachine.dataset.coffeeState = 'ready';
     coffeeButton.textContent = '› Coffee ready';
 
+    readyLabelTimer = window.setTimeout(() => {
+      if (coffeePercent) coffeePercent.textContent = 'READY';
+    }, 180);
+
     serveStartTimer = window.setTimeout(() => {
       coffeeMachine.classList.remove('is-done');
       coffeeMachine.classList.add('is-serving');
       coffeeMachine.dataset.coffeeState = 'serving';
       coffeeButton.textContent = '› Serving coffee';
 
+      coffeeGrabTimer = window.setTimeout(() => {
+        resetMachineDisplay();
+      }, 600);
+
       serveEndTimer = window.setTimeout(() => {
+        if (coffeeLiquid) coffeeLiquid.style.height = '0%';
         coffeeMachine.classList.remove('is-serving');
-        coffeeMachine.classList.add('is-served');
-        coffeeMachine.dataset.coffeeState = 'served';
+        coffeeMachine.classList.add('is-new-cup');
+        coffeeMachine.dataset.coffeeState = 'idle';
         coffeeButton.removeAttribute('aria-busy');
         coffeeButton.disabled = false;
         coffeeButton.textContent = '› Run coffee';
-      }, 3000);
-    }, 900);
+
+        newCupTimer = window.setTimeout(() => {
+          coffeeMachine.classList.remove('is-new-cup');
+        }, 360);
+      }, 1500);
+    }, 700);
   }
 
   coffeeFrame = window.requestAnimationFrame(brewFrame);
