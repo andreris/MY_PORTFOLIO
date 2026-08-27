@@ -738,3 +738,21 @@ body[data-page="knowledge"] .site-footer{
 }
 .site-footer a{color:#fff500!important}
 .site-footer a:hover{color:#fff!important}
+
+
+/* Independent letter hover */
+body[data-page="home"] .letter-hover-title,
+body[data-page="home"] .letter-hover-title:hover{color:var(--home-ink)}
+body[data-page="home"] .letter-hover-title .hover-word{
+  display:inline-block;white-space:nowrap
+}
+body[data-page="home"] .letter-hover-title .hover-char{
+  display:inline-block;color:var(--home-ink);
+  transition:color .28s ease
+}
+body[data-page="home"] .letter-hover-title .hover-char:hover{
+  color:#fff500
+}
+@media(prefers-reduced-motion:reduce){
+  body[data-page="home"] .letter-hover-title .hover-char{transition:none}
+}

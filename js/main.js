@@ -96,6 +96,47 @@ document.querySelectorAll('.details-button').forEach(button => {
 });
 
 
+/* Per-letter hover for Home section titles */
+document.querySelectorAll(
+  'body[data-page="home"] .stack-intro h2, ' +
+  'body[data-page="home"] .section-heading h2, ' +
+  'body[data-page="home"] .home-contact__intro h2'
+).forEach(title => {
+  if (title.dataset.letterHoverReady === 'true') return;
+
+  const originalText = title.textContent.trim();
+  const fragment = document.createDocumentFragment();
+
+  originalText.split(/(\s+)/).forEach(part => {
+    if (!part) return;
+
+    if (/^\s+$/.test(part)) {
+      fragment.appendChild(document.createTextNode(' '));
+      return;
+    }
+
+    const word = document.createElement('span');
+    word.className = 'hover-word';
+    word.setAttribute('aria-hidden', 'true');
+
+    Array.from(part).forEach(character => {
+      const letter = document.createElement('span');
+      letter.className = 'hover-char';
+      letter.textContent = character;
+      word.appendChild(letter);
+    });
+
+    fragment.appendChild(word);
+  });
+
+  title.textContent = '';
+  title.classList.add('letter-hover-title');
+  title.setAttribute('aria-label', originalText);
+  title.dataset.letterHoverReady = 'true';
+  title.appendChild(fragment);
+});
+
+
 /* Contact form: real delivery with inline status */
 const contactForm = document.querySelector('#contact-form');
 
