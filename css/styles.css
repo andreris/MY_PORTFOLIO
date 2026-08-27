@@ -134,8 +134,8 @@ body.dark .machine-feet i{background:#071018}
 .finger-two{top:32%;width:34%}
 .finger-three{top:59%;width:38%}
 .hand-thumb{z-index:3;top:75%;left:25%;width:30%;height:18%}
-.pixel-machine.is-serving .pixel-hand{opacity:1;animation:hand-serve 3s steps(14,end) forwards}
-.pixel-machine.is-serving .coffee-cup{animation:cup-serve 3s steps(14,end) forwards}
+.pixel-machine.is-serving .pixel-hand{opacity:1;animation:hand-serve 1.5s steps(12,end) forwards}
+.pixel-machine.is-serving .coffee-cup{animation:cup-serve 1.5s steps(12,end) forwards}
 .pixel-machine.is-served .coffee-cup{opacity:0;transform:translate(255%,-8%)}
 @keyframes hand-serve{
   0%{opacity:0;transform:translateX(115%)}
