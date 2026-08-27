@@ -804,3 +804,12 @@ body[data-page="home"] .letter-hover-title .hover-char:hover{
     transition:none
   }
 }
+
+
+/* Permanent black Projects link */
+body[data-page="home"] .projects-more,
+body[data-page="home"] .projects-more:hover{
+  background:#080808;
+  color:#fff500;
+  border-color:#080808
+}
