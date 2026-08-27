@@ -831,3 +831,24 @@ body[data-page="home"] .azure-mark svg{width:25px;height:25px}
 @media(max-width:540px){
   body[data-page="home"] .cloud-logos{gap:9px;padding:7px 8px;transform:scale(.92);transform-origin:left center}
 }
+
+
+/* Centered transparent cloud marks */
+body[data-page="home"] .cloud-logos{
+  justify-content:center;
+  gap:16px;
+  margin-inline:auto;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:var(--home-ink)
+}
+body[data-page="home"] .cloud-logo{color:var(--home-ink)}
+@media(max-width:540px){
+  body[data-page="home"] .cloud-logos{
+    gap:11px;
+    padding:0;
+    transform:scale(.92);
+    transform-origin:center
+  }
+}
