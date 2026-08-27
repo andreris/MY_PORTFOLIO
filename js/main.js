@@ -95,14 +95,6 @@ document.querySelectorAll('.details-button').forEach(button => {
   });
 });
 
-document.querySelector('#contact-form')?.addEventListener('submit', event => {
-  event.preventDefault();
-  const data = new FormData(event.currentTarget);
-  const subject = encodeURIComponent(`${data.get('subject')} — ${data.get('name')}`);
-  const message = encodeURIComponent(`Nombre: ${data.get('name')}\nCorreo: ${data.get('email')}\n\n${data.get('message')}`);
-  window.location.href = `mailto:andre.rivera108@gmail.com?subject=${subject}&body=${message}`;
-});
-
 
 /* Home runtime: Lima clock and coffee pipeline */
 const limaClock = document.querySelector('#lima-time');
