@@ -10,37 +10,66 @@
 </head>
 <body data-page="home">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Ir al inicio"><span>AR</span> André Rivera</a>
+    <a class="brand" href="index.html" aria-label="Ir al inicio">ANDRERIS.</a>
     <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <nav class="site-nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a><a href="proyectos.html">Proyectos</a><a href="sobre-mi.html">Sobre mí</a><a href="contacto.html">Contacto</a>
+      <a href="index.html">Home</a>
+      <a href="sobre-mi.html">About me</a>
+      <a href="proyectos.html">Projects</a>
+      <a href="#stack">Knowledge</a>
+      <a href="contacto.html">Contact</a>
     </nav>
-    <button class="theme-button" type="button" aria-label="Cambiar tema">◐</button>
+    <div class="header-tools">
+      <a class="social-link" href="https://www.linkedin.com/in/andré-ricardo-rivera-0b0825246" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a class="social-link" href="https://github.com/andreris" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+      <button class="theme-button" type="button" aria-label="Cambiar tema" aria-pressed="false">◐</button>
+    </div>
   </header>
 
   <main>
-    <section class="hero container">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">DATA ENGINEER · CLOUD · ANALYTICS</p>
-        <h1>Convierto datos dispersos en decisiones claras.</h1>
-        <p class="lead">Diseño pipelines, modelos analíticos y soluciones en la nube con SQL, Python, dbt, Snowflake, Databricks, AWS y GCP.</p>
-        <div class="actions">
-          <a class="button primary" href="proyectos.html">Ver proyectos</a>
-          <a class="button secondary" href="contacto.html">Contactarme</a>
+    <section class="portfolio-hero" aria-labelledby="hero-title">
+      <div class="portfolio-hero__inner">
+        <div class="sql-intro reveal">
+          <h1 id="hero-title" class="sql-title">
+            <span><b>SELECT</b> I’m André Rivera</span>
+            <span><i>OR CALL ME</i> Andreris,</span>
+            <span><b>FROM</b> Data_Science</span>
+            <span><i>JOIN</i> Data_Engineering</span>
+            <span><i>JOIN</i> Design;</span>
+          </h1>
+          <p class="sql-summary">Convierto datos dispersos en información que ayuda a tomar mejores decisiones.</p>
+          <div class="hero-controls">
+            <button class="console-button run-mode" type="button" aria-pressed="false">› Dark mode</button>
+            <button class="console-button run-coffee" type="button">› Run coffee</button>
+          </div>
         </div>
-        <div class="availability"><span></span> Disponible para oportunidades junior de Data Engineering</div>
+
+        <div class="coffee-scene reveal" aria-label="Cafetera pixel animada">
+          <div class="pixel-machine" data-coffee-state="idle">
+            <div class="machine-top"></div>
+            <div class="machine-body">
+              <div class="machine-screen">
+                <output class="coffee-percent" aria-live="polite">000%</output>
+                <div class="coffee-progress"><span></span></div>
+              </div>
+              <div class="machine-controls"><i></i><i></i><i></i></div>
+              <div class="coffee-spout"></div>
+              <div class="coffee-drip" aria-hidden="true"></div>
+            </div>
+            <div class="coffee-cup">
+              <div class="coffee-liquid"></div>
+              <i class="steam steam-one"></i><i class="steam steam-two"></i>
+            </div>
+            <div class="machine-tray"></div>
+          </div>
+          <p class="coffee-caption">COFFEE_PIPELINE.EXE</p>
+        </div>
+
+        <div class="runtime-status">
+          <div>Hora Lima, Perú: <time id="lima-time">--/--/---- --:--:--</time></div>
+          <div>Dark_mode = <strong id="theme-status">FALSE</strong></div>
+        </div>
       </div>
-      <aside class="code-card reveal" aria-label="Ejemplo de pipeline">
-        <div class="code-top"><i></i><i></i><i></i><span>pipeline.py</span></div>
-        <pre><code><b>source</b> = "s3://raw-data"
-
-data = ingest(source)
-clean = validate(data)
-model = transform(clean)
-
-load(model, <em>"analytics.gold"</em>)
-monitor(status=<em>"active"</em>)</code></pre>
-      </aside>
     </section>
 
     <section class="container stats reveal" aria-label="Resumen profesional">
@@ -58,7 +87,7 @@ monitor(status=<em>"active"</em>)</code></pre>
       </div>
     </section>
 
-    <section class="section container stack-section reveal">
+    <section id="stack" class="section container stack-section reveal">
       <div><p class="eyebrow">STACK</p><h2>Herramientas para construir soluciones de extremo a extremo.</h2></div>
       <div class="chips"><span>SQL</span><span>Python</span><span>dbt</span><span>Snowflake</span><span>Databricks</span><span>AWS</span><span>GCP</span><span>Airflow</span><span>Terraform</span><span>GitHub</span></div>
     </section>
