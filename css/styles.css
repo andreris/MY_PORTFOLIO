@@ -457,3 +457,14 @@ body[data-page="contact"] .site-footer{
 }
 
 .form-honey{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+
+
+/* Project list without decorative pipeline panels */
+body[data-page="projects"] .case-card{display:block}
+body[data-page="projects"] .case-visual{display:none}
+body[data-page="projects"] .case-copy{max-width:980px;padding:42px 12px 50px}
+body[data-page="projects"] .github-button{display:inline-flex;align-items:center;justify-content:center;gap:9px}
+body[data-page="projects"] .github-button svg{display:block;width:17px;height:17px;flex:0 0 17px;fill:currentColor}
+@media(max-width:820px){
+  body[data-page="projects"] .case-copy{padding:34px 4px 42px}
+}
