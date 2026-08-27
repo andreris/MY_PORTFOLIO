@@ -35,7 +35,7 @@ body[data-page="home"] .theme-button{justify-self:auto}
 .sql-title b,.sql-title i{display:inline-block;min-width:3.2em;font-style:normal;color:var(--sql-blue)}
 .sql-title i{color:var(--sql-muted)}
 .sql-summary{max-width:610px;margin:24px 0 0;color:color-mix(in srgb,var(--home-ink) 65%,transparent);font-size:1rem}
-.hero-controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hero-controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:76px}
 .console-button{min-height:48px;padding:0 20px;border:2px solid var(--home-ink);border-radius:0;background:var(--signal);color:#080808;font:800 .9rem/1 Consolas,monospace;cursor:pointer;box-shadow:none;transition:transform .18s ease,box-shadow .18s ease,background .3s ease}
 .console-button:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--home-ink)}
 .console-button:focus-visible{outline:3px solid var(--sql-blue);outline-offset:3px}
@@ -69,7 +69,7 @@ body.dark .console-button{color:#071018}
 @keyframes pixel-drip{0%{transform:translateY(-12%)}100%{transform:translateY(70%)}}
 @keyframes pixel-steam{0%{transform:translateY(30%);opacity:0}40%{opacity:1}100%{transform:translateY(-85%);opacity:0}}
 
-.runtime-status{grid-area:status;justify-self:center;color:color-mix(in srgb,var(--home-ink) 82%,transparent);font:500 .78rem/1.65 Consolas,monospace;text-align:center}
+.runtime-status{grid-area:status;justify-self:center;margin-top:16px;color:color-mix(in srgb,var(--home-ink) 82%,transparent);font:500 .78rem/1.65 Consolas,monospace;text-align:center}
 .runtime-status strong{color:var(--sql-blue)}
 body.dark .pixel-machine{filter:drop-shadow(9px 9px 0 rgba(115,244,209,.48))}
 body.dark .machine-screen{background:#dffaf4;color:#071018}
