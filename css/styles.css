@@ -455,3 +455,5 @@ body[data-page="contact"] .site-footer{
   body[data-page="contact"] .contact-links a{display:grid;gap:4px}
   body[data-page="contact"] .contact-links strong{overflow-wrap:anywhere}
 }
+
+.form-honey{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
