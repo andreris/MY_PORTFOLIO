@@ -22,11 +22,46 @@ document.addEventListener('click', event => {
   }
 });
 
-if (localStorage.getItem('portfolio-theme') === 'dark') body.classList.add('dark');
-themeButton?.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  localStorage.setItem('portfolio-theme', body.classList.contains('dark') ? 'dark' : 'light');
-});
+const runModeButton = document.querySelector('.run-mode');
+const themeStatus = document.querySelector('#theme-status');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function renderTheme() {
+  const dark = body.classList.contains('dark');
+  localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
+  themeButton?.setAttribute('aria-pressed', String(dark));
+  runModeButton?.setAttribute('aria-pressed', String(dark));
+  if (runModeButton) runModeButton.textContent = dark ? '› Light mode' : '› Dark mode';
+  if (themeStatus) themeStatus.textContent = dark ? 'TRUE' : 'FALSE';
+}
+
+function setTheme(nextDark, animate = true) {
+  if (body.classList.contains('dark') === nextDark) {
+    renderTheme();
+    return;
+  }
+
+  const applyTheme = () => {
+    body.classList.toggle('dark', nextDark);
+    renderTheme();
+  };
+
+  if (!animate || reduceMotion.matches) {
+    applyTheme();
+    return;
+  }
+
+  body.style.setProperty('--theme-wipe-color', nextDark ? '#071018' : '#e3decf');
+  body.classList.remove('theme-wipe');
+  void body.offsetWidth;
+  body.classList.add('theme-wipe');
+  window.setTimeout(applyTheme, 430);
+  window.setTimeout(() => body.classList.remove('theme-wipe'), 850);
+}
+
+setTheme(localStorage.getItem('portfolio-theme') === 'dark', false);
+themeButton?.addEventListener('click', () => setTheme(!body.classList.contains('dark')));
+runModeButton?.addEventListener('click', () => setTheme(!body.classList.contains('dark')));
 
 document.querySelectorAll('[data-year]').forEach(element => element.textContent = new Date().getFullYear());
 
@@ -61,3 +96,81 @@ document.querySelector('#contact-form')?.addEventListener('submit', event => {
   const message = encodeURIComponent(`Nombre: ${data.get('name')}\nCorreo: ${data.get('email')}\n\n${data.get('message')}`);
   window.location.href = `mailto:andre.rivera108@gmail.com?subject=${subject}&body=${message}`;
 });
+
+
+/* Home runtime: Lima clock and coffee pipeline */
+const limaClock = document.querySelector('#lima-time');
+
+function updateLimaClock() {
+  if (!limaClock) return;
+  limaClock.textContent = new Intl.DateTimeFormat('es-PE', {
+    timeZone: 'America/Lima',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  }).format(new Date());
+}
+
+updateLimaClock();
+if (limaClock) window.setInterval(updateLimaClock, 1000);
+
+const coffeeButton = document.querySelector('.run-coffee');
+const coffeeMachine = document.querySelector('.pixel-machine');
+const coffeePercent = document.querySelector('.coffee-percent');
+const coffeeProgress = document.querySelector('.coffee-progress span');
+const coffeeLiquid = document.querySelector('.coffee-liquid');
+let coffeeFrame = 0;
+
+function renderCoffee(value) {
+  const percentage = Math.max(0, Math.min(100, Math.round(value)));
+  const padded = String(percentage).padStart(3, '0');
+  if (coffeePercent) coffeePercent.textContent = padded + '%';
+  if (coffeeProgress) coffeeProgress.style.width = percentage + '%';
+  if (coffeeLiquid) coffeeLiquid.style.height = Math.round(percentage * 0.58) + '%';
+  if (coffeeButton) coffeeButton.textContent = percentage < 100 ? '› Brewing ' + padded + '%' : '› Run coffee';
+}
+
+function runCoffee() {
+  if (!coffeeMachine || !coffeeButton) return;
+  window.cancelAnimationFrame(coffeeFrame);
+  coffeeMachine.classList.remove('is-done');
+  coffeeMachine.classList.add('is-brewing');
+  coffeeMachine.dataset.coffeeState = 'brewing';
+  coffeeButton.setAttribute('aria-busy', 'true');
+  renderCoffee(0);
+
+  if (reduceMotion.matches) {
+    renderCoffee(100);
+    coffeeMachine.classList.remove('is-brewing');
+    coffeeMachine.classList.add('is-done');
+    coffeeMachine.dataset.coffeeState = 'ready';
+    coffeeButton.removeAttribute('aria-busy');
+    return;
+  }
+
+  const startedAt = performance.now();
+  const duration = 4600;
+
+  function brewFrame(now) {
+    const progress = Math.min(1, (now - startedAt) / duration);
+    renderCoffee(progress * 100);
+
+    if (progress < 1) {
+      coffeeFrame = window.requestAnimationFrame(brewFrame);
+      return;
+    }
+
+    coffeeMachine.classList.remove('is-brewing');
+    coffeeMachine.classList.add('is-done');
+    coffeeMachine.dataset.coffeeState = 'ready';
+    coffeeButton.removeAttribute('aria-busy');
+  }
+
+  coffeeFrame = window.requestAnimationFrame(brewFrame);
+}
+
+coffeeButton?.addEventListener('click', runCoffee);
