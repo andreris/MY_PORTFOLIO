@@ -137,6 +137,8 @@ body.dark .machine-feet i{background:#071018}
 .pixel-machine.is-serving .pixel-hand{opacity:1;animation:hand-serve 1.5s steps(12,end) forwards}
 .pixel-machine.is-serving .coffee-cup{animation:cup-serve 1.5s steps(12,end) forwards}
 .pixel-machine.is-served .coffee-cup{opacity:0;transform:translate(255%,-8%)}
+.pixel-machine.is-new-cup .coffee-cup{animation:new-cup .34s steps(5,end) both}
+@keyframes new-cup{0%{opacity:0;transform:translateY(28%)}100%{opacity:1;transform:translateY(0)}}
 @keyframes hand-serve{
   0%{opacity:0;transform:translateX(115%)}
   8%{opacity:1}
