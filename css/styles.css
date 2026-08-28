@@ -941,3 +941,13 @@ body.has-custom-cursor label{cursor:none}
 @media(hover:none),(pointer:coarse){
   .custom-cursor,.cursor-burst{display:none}
 }
+.marquee-strip{overflow:hidden;background:#080808;border-block:2px solid var(--home-ink,#080808)}
+.marquee-track{display:flex;width:max-content;white-space:nowrap;animation:marquee-scroll 18s linear infinite}
+.marquee-track span{padding:14px 0;color:#fff500;font:800 .95rem/1 Consolas,monospace;letter-spacing:.08em}
+@keyframes marquee-scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none}
+}
