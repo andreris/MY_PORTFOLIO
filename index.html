@@ -6,8 +6,8 @@
   <meta name="description" content="Portafolio de André Rivera, Data Engineer especializado en pipelines, cloud y analítica.">
   <title>André Rivera | Data Engineer</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260828i">
-  <script src="js/main.js?v=20260828i" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260828o">
+  <script src="js/main.js?v=20260828o" defer></script>
 </head>
 <body data-page="home">
 
@@ -32,13 +32,23 @@
     <section class="portfolio-hero" aria-labelledby="hero-title">
       <div class="portfolio-hero__inner">
         <div class="sql-intro reveal">
-          <h1 id="hero-title" class="sql-title">
-            <span><span class="sql-line-num">01</span><b>SELECT</b> I’m André Rivera</span>
-            <span><span class="sql-line-num">02</span><i>OR CALL ME</i> Andreris,</span>
-            <span><span class="sql-line-num">03</span><b>FROM</b> Data_Science</span>
-            <span><span class="sql-line-num">04</span><i>JOIN</i> Data_Engineering</span>
-            <span><span class="sql-line-num">05</span><i>JOIN</i> Design;<span class="sql-cursor" aria-hidden="true"></span></span>
-          </h1>
+          <div class="sql-editor-card">
+            <div class="sql-editor-bar">
+              <div class="sql-editor-dots" aria-hidden="true">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="sql-editor-tag">UTF-8 // READY</div>
+            </div>
+            <h1 id="hero-title" class="sql-title">
+              <span><span class="sql-line-num">01</span><b>SELECT</b> I’m André Rivera</span>
+              <span><span class="sql-line-num">02</span><i>OR CALL ME</i> Andreris,</span>
+              <span><span class="sql-line-num">03</span><b>FROM</b> Data_Science</span>
+              <span><span class="sql-line-num">04</span><i>JOIN</i> Data_Engineering</span>
+              <span><span class="sql-line-num">05</span><i>JOIN</i> Design;<span class="sql-cursor" aria-hidden="true"></span></span>
+            </h1>
+          </div>
           <div class="hero-controls">
             <button class="console-button run-mode" type="button" aria-pressed="false">› Dark mode</button>
             <button class="console-button run-coffee" type="button">› Run coffee</button>
@@ -209,23 +219,80 @@
       <a class="cert-more reveal" href="knowledge.html">Ver más certificaciones →</a>
     </section>
 
+    <!-- Pipeline connecting lines between Aprendizaje continuo & Conversemos -->
+    <div class="pipeline-bridge pipeline-bridge--single container reveal" aria-hidden="true">
+      <div class="pipeline-line pipe-center">
+        <span class="pipe-joint top"></span>
+        <span class="pipe-pulse"></span>
+        <span class="pipe-joint bottom"></span>
+      </div>
+      <div class="pipeline-center-badge">
+        <span class="pipeline-badge-icon">▼</span>
+        <span class="pipeline-badge-status">DELIVER</span>
+      </div>
+    </div>
+
     <section class="home-contact container reveal" aria-labelledby="home-contact-title">
       <div class="home-contact__intro">
         <h2 id="home-contact-title"><span class="highlight-mark">Conversemos</span></h2>
-        <p>¿Tienes una oportunidad laboral, una colaboración o un proyecto? Déjame un mensaje y responderé lo antes posible.</p>
+        <p>¿Tienes una oportunidad laboral, una colaboración o un proyecto de datos? Déjame un mensaje y te responderé a la brevedad.</p>
+        
+        <div class="contact-badges-list" aria-label="Información de contacto rápido">
+          <div class="contact-badge-chip">
+            <span class="badge-icon-tag">📍</span>
+            <span>LIMA, PERÚ (REMOTO / HÍBRIDO)</span>
+          </div>
+        </div>
       </div>
+
       <div class="form-card home-contact__form">
+        <div class="contact-form-bar" aria-hidden="true">
+          <div class="contact-form-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="contact-form-tag">DISPATCHER // SMTP_READY</span>
+        </div>
         <form id="contact-form" action="https://formsubmit.co/andre.rivera108@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio de André Rivera">
           <input type="hidden" name="_template" value="table">
           <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          
           <div class="field-row">
-            <label>Nombre<input type="text" name="name" autocomplete="name" required placeholder="Tu nombre"></label>
-            <label>Correo de destino<input type="email" name="recipient_display" value="andre.rivera108@gmail.com" readonly aria-readonly="true"></label>
+            <label>
+              <span class="field-label-text">Nombre <span class="field-required">*</span></span>
+              <input type="text" name="name" autocomplete="name" required placeholder="Tu nombre o empresa">
+            </label>
+            <label>
+              <span class="field-label-text">Buzón de destino</span>
+              <div class="field-readonly-box">
+                <span class="readonly-badge">TO:</span>
+                <span class="readonly-value">andre.rivera108@gmail.com</span>
+              </div>
+              <input type="hidden" name="recipient_display" value="andre.rivera108@gmail.com">
+            </label>
           </div>
-          <label>Asunto<select name="subject"><option>Oportunidad laboral</option><option>Proyecto o colaboración</option><option>Consulta sobre el portafolio</option><option>Otro</option></select></label>
-          <label>Mensaje<textarea name="message" rows="6" required placeholder="Cuéntame brevemente en qué puedo ayudarte"></textarea></label>
-          <button class="button primary submit-button" type="submit">Enviar correo</button>
+
+          <label>
+            <span class="field-label-text">Asunto</span>
+            <select name="subject" class="contact-select">
+              <option>Oportunidad laboral</option>
+              <option>Proyecto o colaboración</option>
+              <option>Consulta sobre el portafolio</option>
+              <option>Otro</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="field-label-text">Mensaje <span class="field-required">*</span></span>
+            <textarea name="message" rows="5" required placeholder="Cuéntame brevemente sobre tu proyecto o propuesta..."></textarea>
+          </label>
+
+          <button class="button primary submit-button contact-submit-btn" type="submit">
+            <span>› Enviar mensaje</span>
+            <span class="btn-arrow" aria-hidden="true">↗</span>
+          </button>
         </form>
       </div>
     </section>
