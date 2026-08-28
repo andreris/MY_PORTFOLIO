@@ -708,7 +708,6 @@ body[data-page="home"] .home-contact__form .submit-button:disabled{cursor:wait;o
 }
 
 /* Consistent yellow section titles on the homepage */
-body[data-page="home"] #stack h2,
 body[data-page="home"] #proyectos-home .section-heading h2{
   max-width:940px;
   font-size:clamp(3rem,7.4vw,6.7rem);
@@ -716,7 +715,6 @@ body[data-page="home"] #proyectos-home .section-heading h2{
   letter-spacing:-.075em;
   text-shadow:8px 8px 0 #fff500
 }
-body[data-page="home"] #stack h2 .highlight-mark,
 body[data-page="home"] #proyectos-home .highlight-mark,
 body[data-page="home"] #home-certifications-title .highlight-mark,
 body[data-page="home"] #home-contact-title .highlight-mark{
