@@ -951,3 +951,7 @@ body.has-custom-cursor label{cursor:none}
 @media(prefers-reduced-motion:reduce){
   .marquee-track{animation:none}
 }
+.sql-title{border:2px solid var(--home-ink);padding:22px 26px;background:var(--home-bg)}
+@media(max-width:820px){
+  .sql-title{padding:16px 18px}
+}
