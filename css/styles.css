@@ -308,11 +308,11 @@ body[data-page="projects"] .case-card{
   border-radius:0;box-shadow:none
 }
 body[data-page="projects"] .case-visual{
-  min-height:340px;border-right:1px solid var(--page-ink);border-radius:0;
-  background:var(--signal);color:#080808
+  min-height:340px;margin:18px;border:2px solid var(--page-ink);border-radius:16px;
+  background:#080808;color:#fff
 }
 body[data-page="projects"] .case-visual span{
-  border:2px solid #080808;border-radius:0;background:transparent;color:#080808;
+  border:2px solid #fff;border-radius:0;background:transparent;color:#fff;
   font:800 .76rem/1 Consolas,monospace
 }
 body[data-page="projects"] .case-copy{padding:48px 52px}
