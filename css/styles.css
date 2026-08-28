@@ -978,3 +978,4 @@ body.has-custom-cursor label{cursor:none}
   paint-order:stroke fill;
   filter:drop-shadow(6px 6px 0 var(--signal));
 }
+#proyectos-home .section-heading h2{text-shadow:8px 8px 0 #fff500}
