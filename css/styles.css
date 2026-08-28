@@ -970,3 +970,11 @@ body.has-custom-cursor label{cursor:none}
   background:var(--signal);
   box-shadow:6px 6px 0 var(--home-ink);
 }
+#proyectos-home .highlight-mark{
+  background:transparent;
+  box-shadow:none;
+  color:var(--home-ink);
+  -webkit-text-stroke:6px var(--signal);
+  paint-order:stroke fill;
+  filter:drop-shadow(6px 6px 0 var(--signal));
+}
