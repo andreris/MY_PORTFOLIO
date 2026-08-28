@@ -6,8 +6,8 @@
   <meta name="description" content="Portafolio de André Rivera, Data Engineer especializado en pipelines, cloud y analítica.">
   <title>André Rivera | Data Engineer</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260828a">
-  <script src="js/main.js?v=20260828a" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260828i">
+  <script src="js/main.js?v=20260828i" defer></script>
 </head>
 <body data-page="home">
 
@@ -103,11 +103,32 @@
       <article><strong>ISIL</strong><span>Estudios</span></article>
     </section>
 
-    <section id="stack" class="section container stack-section reveal">
-      <div class="section-heading reveal"><h2><span class="highlight-mark">Stack</span></h2></div>
-        <h2>Herramientas que he utilizado y en las que he desarrollado experiencia práctica.</h2>
+    <!-- Pipeline connecting lines between Stats & Stack -->
+    <div class="pipeline-bridge container reveal" aria-hidden="true">
+      <div class="pipeline-line pipe-left">
+        <span class="pipe-joint top"></span>
+        <span class="pipe-pulse"></span>
+        <span class="pipe-joint bottom"></span>
       </div>
-      <div class="stack-categories" aria-label="Tecnologías por categoría">
+      <div class="pipeline-center-badge">
+        <span class="pipeline-badge-icon">▼</span>
+        <span class="pipeline-badge-status">INGEST</span>
+      </div>
+      <div class="pipeline-line pipe-right">
+        <span class="pipe-joint top"></span>
+        <span class="pipe-pulse"></span>
+        <span class="pipe-joint bottom"></span>
+      </div>
+    </div>
+
+    <section id="stack" class="section container stack-section reveal">
+      <div class="stack-header reveal">
+        <div class="section-heading">
+          <h2><span class="highlight-mark">Stack</span></h2>
+        </div>
+        <p class="stack-description">Herramientas que he utilizado y en las que he desarrollado experiencia práctica.</p>
+      </div>
+      <div class="stack-categories reveal" aria-label="Tecnologías por categoría">
         <div class="stack-row"><span>LANGUAGES</span><p>SQL · Python</p></div>
         <div class="stack-row"><span>DATA &amp; ORCHESTRATION</span><p>dbt · Airflow · PySpark</p></div>
         <div class="stack-row"><span>DATABASES &amp; WAREHOUSES</span><p>SQL Server · Snowflake · BigQuery</p></div>
@@ -117,7 +138,25 @@
       </div>
     </section>
 
-    <section id="proyectos-home" class="section container">
+    <!-- Pipeline connecting lines between Stack & Proyectos -->
+    <div class="pipeline-bridge container reveal" aria-hidden="true">
+      <div class="pipeline-line pipe-left">
+        <span class="pipe-joint top"></span>
+        <span class="pipe-pulse"></span>
+        <span class="pipe-joint bottom"></span>
+      </div>
+      <div class="pipeline-center-badge">
+        <span class="pipeline-badge-icon">▼</span>
+        <span class="pipeline-badge-status">PROCESSING</span>
+      </div>
+      <div class="pipeline-line pipe-right">
+        <span class="pipe-joint top"></span>
+        <span class="pipe-pulse"></span>
+        <span class="pipe-joint bottom"></span>
+      </div>
+    </div>
+
+    <section id="proyectos-home" class="section container project-section-box reveal">
       <div class="section-heading reveal"><h2><span class="highlight-mark">Proyectos</span></h2></div>
       <div class="project-grid">
         <article class="project-card reveal"><span class="project-number">01</span><p class="tag">SNOWFLAKE · DBT</p><h3>Pipeline analítico de ventas</h3><p>Transformación por capas desde datos RAW hasta un modelo dimensional preparado para BI.</p><a href="proyectos.html#snowflake">Ver caso →</a></article>
@@ -127,7 +166,25 @@
       <a class="projects-more reveal" href="proyectos.html">Ver todos →</a>
     </section>
 
-    <section class="section container home-certifications" aria-labelledby="home-certifications-title">
+    <!-- Pipeline connecting lines between Proyectos & Aprendizaje continuo -->
+    <div class="pipeline-bridge container reveal" aria-hidden="true">
+      <div class="pipeline-line pipe-left">
+        <span class="pipe-joint top"></span>
+        <span class="pipe-pulse"></span>
+        <span class="pipe-joint bottom"></span>
+      </div>
+      <div class="pipeline-center-badge">
+        <span class="pipeline-badge-icon">▼</span>
+        <span class="pipeline-badge-status">TRANSFORM</span>
+      </div>
+      <div class="pipeline-line pipe-right">
+        <span class="pipe-joint top"></span>
+        <span class="pipe-pulse"></span>
+        <span class="pipe-joint bottom"></span>
+      </div>
+    </div>
+
+    <section class="section container home-certifications reveal" aria-labelledby="home-certifications-title">
       <div class="section-heading reveal">
         <p class="eyebrow">CERTIFICACIONES</p>
         <h2 id="home-certifications-title"><span class="highlight-mark">Aprendizaje continuo</span></h2>
@@ -154,7 +211,7 @@
 
     <section class="home-contact container reveal" aria-labelledby="home-contact-title">
       <div class="home-contact__intro">
-        <h2 id="home-contact-title"><span class="highlight-mark">Conversemos sobre datos, tecnología y oportunidades.</span></h2>
+        <h2 id="home-contact-title"><span class="highlight-mark">Conversemos</span></h2>
         <p>¿Tienes una oportunidad laboral, una colaboración o un proyecto? Déjame un mensaje y responderé lo antes posible.</p>
       </div>
       <div class="form-card home-contact__form">
