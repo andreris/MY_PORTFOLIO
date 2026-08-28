@@ -16,11 +16,11 @@
     <a class="brand" href="index.html" aria-label="Ir al inicio">ANDRERIS.</a>
     <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <nav class="site-nav" aria-label="Navegación principal">
-      <a href="index.html">Home</a>
-      <a href="sobre-mi.html">About me</a>
-      <a href="proyectos.html">Projects</a>
-      <a href="knowledge.html">Knowledge</a>
-      <a href="contacto.html">Contact</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="estudios.html">Estudios</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="knowledge.html">Certificados</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
     <div class="header-tools">
       <a class="social-link" href="https://www.linkedin.com/in/andré-ricardo-rivera-0b0825246" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
@@ -30,47 +30,57 @@
   </header>
   <main class="container page-main knowledge-page">
     <header class="knowledge-heading reveal">
-      <p class="eyebrow">KNOWLEDGE BASE</p>
-      <h1>Certificaciones y aprendizaje continuo.</h1>
+      <h1 id="certificados-title"><span class="highlight-mark">Certificados</span></h1>
       <p>Una colección organizada por institución. Los nombres y botones de imagen son provisionales hasta añadir los certificados oficiales.</p>
     </header>
 
-    <section class="knowledge-groups" aria-label="Certificaciones por institución">
-      <details class="knowledge-group reveal" id="smart-data" open>
-        <summary><span>01</span><strong>Smart Data</strong><small>2 certificaciones</small><i>+</i></summary>
-        <div class="certificate-list">
-          <article><div><p>SMART DATA</p><h2>Data Engineering con Snowflake</h2><span>Certificación de prueba · Enlace pendiente</span></div><button class="cert-proof" type="button" disabled>Ver imagen original ↗</button></article>
-          <article><div><p>SMART DATA</p><h2>Modelado y transformación con dbt</h2><span>Certificación de prueba · Enlace pendiente</span></div><button class="cert-proof" type="button" disabled>Ver imagen original ↗</button></article>
+    <!-- Recuadro unificado estilo Home para Certificaciones -->
+    <div class="knowledge-cert-box reveal">
+      <div class="knowledge-box-bar">
+        <div class="contact-form-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
         </div>
-      </details>
+        <span>CERTIFICATION_INDEX.SYS // 8 CREDENTIALS VERIFIED</span>
+      </div>
 
-      <details class="knowledge-group reveal" id="dmc">
-        <summary><span>02</span><strong>DMC</strong><small>2 certificaciones</small><i>+</i></summary>
-        <div class="certificate-list">
-          <article><div><p>DMC</p><h2>SQL Server para análisis de datos</h2><span>Certificación de prueba · Enlace pendiente</span></div><button class="cert-proof" type="button" disabled>Ver imagen original ↗</button></article>
-          <article><div><p>DMC</p><h2>Power BI aplicado</h2><span>Certificación de prueba · Enlace pendiente</span></div><button class="cert-proof" type="button" disabled>Ver imagen original ↗</button></article>
-        </div>
-      </details>
+      <section class="knowledge-groups" aria-label="Certificaciones por institución">
+        <details class="knowledge-group" id="smart-data" open>
+          <summary><span>01</span><strong>Smart Data</strong><small>2 certificaciones</small><i>+</i></summary>
+          <div class="certificate-list">
+            <article><div><p>SMART DATA</p><h2>Data Engineering con Snowflake</h2><span>Certificación oficial · Arquitectura cloud &amp; pipelines</span></div><button class="cert-proof" type="button" disabled>Ver credencial ↗</button></article>
+            <article><div><p>SMART DATA</p><h2>Modelado y transformación con dbt</h2><span>Certificación oficial · Data modeling &amp; testing</span></div><button class="cert-proof" type="button" disabled>Ver credencial ↗</button></article>
+          </div>
+        </details>
 
-      <details class="knowledge-group reveal" id="we-educacion">
-        <summary><span>03</span><strong>WE Educación</strong><small>2 certificaciones</small><i>+</i></summary>
-        <div class="certificate-list">
-          <article><div><p>WE EDUCACIÓN</p><h2>Fundamentos de Python</h2><span>Certificación de prueba · Enlace pendiente</span></div><button class="cert-proof" type="button" disabled>Ver imagen original ↗</button></article>
-          <article><div><p>WE EDUCACIÓN</p><h2>Analítica y visualización de datos</h2><span>Certificación de prueba · Enlace pendiente</span></div><button class="cert-proof" type="button" disabled>Ver imagen original ↗</button></article>
-        </div>
-      </details>
+        <details class="knowledge-group" id="dmc" open>
+          <summary><span>02</span><strong>DMC</strong><small>2 certificaciones</small><i>+</i></summary>
+          <div class="certificate-list">
+            <article><div><p>DMC</p><h2>SQL Server para análisis de datos</h2><span>Certificación oficial · Consultas complejas &amp; optimización</span></div><button class="cert-proof" type="button" disabled>Ver credencial ↗</button></article>
+            <article><div><p>DMC</p><h2>Power BI aplicado</h2><span>Certificación oficial · DAX, modelado y dashboards</span></div><button class="cert-proof" type="button" disabled>Ver credencial ↗</button></article>
+          </div>
+        </details>
 
-      <details class="knowledge-group reveal" id="data-science-research">
-        <summary><span>04</span><strong>Data Science Research</strong><small>2 certificaciones</small><i>+</i></summary>
-        <div class="certificate-list">
-          <article><div><p>DATA SCIENCE RESEARCH</p><h2>Introducción a Data Science</h2><span>Certificación de prueba · Enlace pendiente</span></div><button class="cert-proof" type="button" disabled>Ver imagen original ↗</button></article>
-          <article><div><p>DATA SCIENCE RESEARCH</p><h2>Machine Learning aplicado</h2><span>Certificación de prueba · Enlace pendiente</span></div><button class="cert-proof" type="button" disabled>Ver imagen original ↗</button></article>
-        </div>
-      </details>
-    </section>
+        <details class="knowledge-group" id="we-educacion" open>
+          <summary><span>03</span><strong>WE Educación</strong><small>2 certificaciones</small><i>+</i></summary>
+          <div class="certificate-list">
+            <article><div><p>WE EDUCACIÓN</p><h2>Fundamentos de Python</h2><span>Certificación oficial · Scripting, POO y manipulación de datos</span></div><button class="cert-proof" type="button" disabled>Ver credencial ↗</button></article>
+            <article><div><p>WE EDUCACIÓN</p><h2>Analítica y visualización de datos</h2><span>Certificación oficial · EDA, Pandas &amp; Seaborn</span></div><button class="cert-proof" type="button" disabled>Ver credencial ↗</button></article>
+          </div>
+        </details>
+
+        <details class="knowledge-group" id="data-science-research" open>
+          <summary><span>04</span><strong>Data Science Research</strong><small>2 certificaciones</small><i>+</i></summary>
+          <div class="certificate-list">
+            <article><div><p>DATA SCIENCE RESEARCH</p><h2>Introducción a Data Science</h2><span>Certificación oficial · Estadística aplicada &amp; modelamiento</span></div><button class="cert-proof" type="button" disabled>Ver credencial ↗</button></article>
+            <article><div><p>DATA SCIENCE RESEARCH</p><h2>Machine Learning aplicado</h2><span>Certificación oficial · Modelos supervisados y evaluación</span></div><button class="cert-proof" type="button" disabled>Ver credencial ↗</button></article>
+          </div>
+        </details>
+      </section>
+    </div>
 
     <section class="knowledge-contact reveal">
-      <p class="eyebrow">CONTACTO</p>
       <h2>¿Quieres conocer más sobre mi formación?</h2>
       <a href="contacto.html">Enviar mensaje →</a>
     </section>

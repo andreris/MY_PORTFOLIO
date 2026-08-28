@@ -19,11 +19,11 @@
     <a class="brand" href="index.html" aria-label="Ir al inicio">ANDRERIS.</a>
     <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <nav class="site-nav" aria-label="Navegación principal">
-      <a href="index.html">Home</a>
-      <a href="sobre-mi.html">About me</a>
-      <a href="proyectos.html">Projects</a>
-      <a href="knowledge.html">Knowledge</a>
-      <a href="contacto.html">Contact</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="estudios.html">Estudios</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="knowledge.html">Certificados</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
     <div class="header-tools">
       <a class="social-link" href="https://www.linkedin.com/in/andré-ricardo-rivera-0b0825246" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
@@ -32,8 +32,9 @@
     </div>
   </header>
   <main class="container page-main">
-    <header class="page-heading reveal"><p class="eyebrow">PORTAFOLIO TÉCNICO</p><h1>Proyectos</h1><p>Casos prácticos que recorren ingestión, transformación, calidad, modelado y presentación de datos.</p></header>
+    <header class="page-heading reveal"><h1 id="proyectos-page-title"><span class="highlight-mark">Proyectos</span></h1><p>Casos prácticos que recorren ingestión, transformación, calidad, modelado y presentación de datos.</p></header>
     <div class="filters reveal" role="group" aria-label="Filtrar proyectos"><button class="filter active" data-filter="all">Todos</button><button class="filter" data-filter="cloud">Cloud</button><button class="filter" data-filter="analytics">Analytics</button><button class="filter" data-filter="ml">Machine Learning</button></div>
+
     <section class="case-list">
       <article class="case-card reveal" id="snowflake" data-category="cloud analytics"><div class="case-visual snow"><span>RAW</span><b>→</b><span>STAGING</span><b>→</b><span>MART</span></div><div class="case-copy"><p class="tag">SNOWFLAKE · DBT · SQL</p><h2>Pipeline analítico de ventas</h2><p>Proyecto ELT organizado en capas. Estandariza datos, elimina duplicados, crea dimensiones y una tabla de hechos lista para dashboards.</p><ul><li>Modelos modulares con <code>source()</code> y <code>ref()</code></li><li>Pruebas de calidad y documentación YAML</li><li>Modelo estrella para consumo analítico</li></ul><div class="card-actions"><a class="button primary small github-button" href="https://github.com/andreris/proyectos_snowflake" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.28-5.27-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.71 5.38-5.29 5.67.42.36.79 1.07.79 2.16v3.23c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>

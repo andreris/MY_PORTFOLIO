@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Sobre André Rivera, Data Engineer especializado en pipelines, cloud y analítica."><title>Sobre mí | André Rivera</title><link rel="icon" type="image/png" href="assets/images/favicon.png"><link rel="stylesheet" href="css/styles.css?v=20260827w"><script src="js/main.js?v=20260827i" defer></script></head>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Sobre André Rivera, Data Engineer especializado en pipelines, cloud y analítica."><title>Sobre mí | André Rivera</title><link rel="icon" type="image/png" href="assets/images/favicon.png"><link rel="stylesheet" href="css/styles.css?v=20260828p"><script src="js/main.js?v=20260828p" defer></script></head>
 <body data-page="about">
 
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Ir al inicio">ANDRERIS.</a>
     <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <nav class="site-nav" aria-label="Navegación principal">
-      <a href="index.html">Home</a>
-      <a href="sobre-mi.html">About me</a>
-      <a href="proyectos.html">Projects</a>
-      <a href="knowledge.html">Knowledge</a>
-      <a href="contacto.html">Contact</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="estudios.html">Estudios</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="knowledge.html">Certificados</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
     <div class="header-tools">
       <a class="social-link" href="https://www.linkedin.com/in/andré-ricardo-rivera-0b0825246" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
@@ -20,11 +20,164 @@
   </header>
   <main class="container page-main">
     <section class="about-grid">
-      <div class="portrait-card reveal"><img class="portrait-photo" src="assets/images/andre-rivera.jfif" alt="André Rivera, Data Engineer" width="400" height="400"><p>Data Engineer en formación</p><span>Lima, Perú · Disponible para trabajo remoto</span></div>
-      <div class="about-copy reveal"><p class="eyebrow">SOBRE MÍ</p><h1>Datos sólidos, soluciones simples y aprendizaje continuo.</h1><p>Soy André Rivera. Me especializo en convertir datos sin procesar en productos confiables para análisis y toma de decisiones.</p><p>Mi formación combina Data Science, gestión financiera e ingeniería de datos. Actualmente desarrollo proyectos prácticos con Snowflake, dbt, Databricks y plataformas cloud.</p><div class="actions"><a class="button primary" href="proyectos.html">Explorar proyectos</a><a class="button secondary" href="contacto.html">Solicitar CV</a></div></div>
+      <div class="portrait-card reveal">
+        <img class="portrait-photo" src="assets/images/andre-rivera.jfif" alt="André Rivera, Data Engineer" width="400" height="400">
+        <p class="portrait-title">Data Engineer en formación</p>
+        <span class="portrait-loc">Lima, Perú · Disponible para trabajo remoto</span>
+      </div>
+
+      <div class="about-copy reveal">
+        <h1 id="about-title"><span class="highlight-mark">Hola</span></h1>
+        <p>Soy André Rivera. Me especializo en convertir datos sin procesar en productos confiables para análisis y toma de decisiones.</p>
+        <p>Mi formación combina Data Science, gestión financiera e ingeniería de datos. Actualmente desarrollo proyectos prácticos con Snowflake, dbt, Databricks y plataformas cloud.</p>
+        <div class="actions">
+          <a class="button primary" href="proyectos.html">Explorar proyectos</a>
+          <a class="button secondary" href="contacto.html">Solicitar CV</a>
+        </div>
+      </div>
     </section>
-    <section class="section timeline-section"><div class="section-heading reveal"><p class="eyebrow">MI ENFOQUE</p><h2>Cómo trabajo un proyecto de datos</h2></div><ol class="timeline"><li class="reveal"><span>01</span><div><h3>Comprender el problema</h3><p>Identifico la decisión de negocio, los usuarios y las métricas importantes.</p></div></li><li class="reveal"><span>02</span><div><h3>Construir el pipeline</h3><p>Diseño ingestión, almacenamiento, transformaciones y controles de calidad.</p></div></li><li class="reveal"><span>03</span><div><h3>Preparar el consumo</h3><p>Modelo dimensiones y hechos para análisis, BI o machine learning.</p></div></li><li class="reveal"><span>04</span><div><h3>Documentar y monitorear</h3><p>Agrego pruebas, linaje, documentación y criterios operativos.</p></div></li></ol></section>
-    <section class="section skill-columns reveal"><div><p class="eyebrow">COMPETENCIAS</p><h2>Conocimiento técnico</h2></div><div class="skills"><article><h3>Datos</h3><p>SQL · Python · PySpark · Modelado dimensional · Calidad</p></article><article><h3>Plataformas</h3><p>Snowflake · Databricks · BigQuery · S3 · Cloud Storage</p></article><article><h3>Entrega</h3><p>dbt · Airflow · Terraform · Git · GitHub · Power BI</p></article></div></section>
+
+    <!-- Colección de fotos (Encuadros estilo Home) -->
+    <section class="photo-collection-section reveal" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <h2 id="gallery-title"><span class="highlight-mark">Colección de fotos</span></h2>
+        <p class="gallery-subtitle">Galería de momentos, setup de trabajo y actividades del día a día (espacios reservados para próximas fotos).</p>
+      </div>
+
+      <div class="photo-frames-grid">
+        <!-- Frame 01 -->
+        <div class="photo-frame-card">
+          <div class="photo-frame-header">
+            <span class="photo-frame-tag">FRAME_01</span>
+            <span>DATA_LAB</span>
+          </div>
+          <div class="photo-placeholder-box">
+            <svg class="photo-icon-pixel" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+              <rect x="4" y="8" width="28" height="22" stroke="#080808" stroke-width="2" fill="none"/>
+              <rect x="8" y="4" width="8" height="4" fill="#080808"/>
+              <circle cx="18" cy="19" r="6" stroke="#080808" stroke-width="2"/>
+              <rect x="25" y="11" width="3" height="3" fill="#080808"/>
+            </svg>
+            <span class="placeholder-text">[ ESPACIO PARA FOTO 01 ]</span>
+            <span class="placeholder-sub">Workspace &amp; Monitores · 4:3</span>
+          </div>
+          <div class="photo-frame-caption">
+            <strong class="photo-frame-title">Estación de desarrollo</strong>
+            <span class="photo-frame-meta">LIMA // SETUP</span>
+          </div>
+        </div>
+
+        <!-- Frame 02 -->
+        <div class="photo-frame-card">
+          <div class="photo-frame-header">
+            <span class="photo-frame-tag">FRAME_02</span>
+            <span>PIPELINE_SESSION</span>
+          </div>
+          <div class="photo-placeholder-box">
+            <svg class="photo-icon-pixel" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+              <rect x="4" y="8" width="28" height="22" stroke="#080808" stroke-width="2" fill="none"/>
+              <rect x="8" y="4" width="8" height="4" fill="#080808"/>
+              <circle cx="18" cy="19" r="6" stroke="#080808" stroke-width="2"/>
+              <rect x="25" y="11" width="3" height="3" fill="#080808"/>
+            </svg>
+            <span class="placeholder-text">[ ESPACIO PARA FOTO 02 ]</span>
+            <span class="placeholder-sub">Sesión de arquitectura · 4:3</span>
+          </div>
+          <div class="photo-frame-caption">
+            <strong class="photo-frame-title">Modelado en pizarra</strong>
+            <span class="photo-frame-meta">ARCH // DATA</span>
+          </div>
+        </div>
+
+        <!-- Frame 03 -->
+        <div class="photo-frame-card">
+          <div class="photo-frame-header">
+            <span class="photo-frame-tag">FRAME_03</span>
+            <span>TECH_COMMUNITY</span>
+          </div>
+          <div class="photo-placeholder-box">
+            <svg class="photo-icon-pixel" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+              <rect x="4" y="8" width="28" height="22" stroke="#080808" stroke-width="2" fill="none"/>
+              <rect x="8" y="4" width="8" height="4" fill="#080808"/>
+              <circle cx="18" cy="19" r="6" stroke="#080808" stroke-width="2"/>
+              <rect x="25" y="11" width="3" height="3" fill="#080808"/>
+            </svg>
+            <span class="placeholder-text">[ ESPACIO PARA FOTO 03 ]</span>
+            <span class="placeholder-sub">Eventos &amp; Meetups · 4:3</span>
+          </div>
+          <div class="photo-frame-caption">
+            <strong class="photo-frame-title">Comunidades de datos</strong>
+            <span class="photo-frame-meta">COMMUNITY</span>
+          </div>
+        </div>
+
+        <!-- Frame 04 -->
+        <div class="photo-frame-card">
+          <div class="photo-frame-header">
+            <span class="photo-frame-tag">FRAME_04</span>
+            <span>FOCUS_TIME</span>
+          </div>
+          <div class="photo-placeholder-box">
+            <svg class="photo-icon-pixel" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+              <rect x="4" y="8" width="28" height="22" stroke="#080808" stroke-width="2" fill="none"/>
+              <rect x="8" y="4" width="8" height="4" fill="#080808"/>
+              <circle cx="18" cy="19" r="6" stroke="#080808" stroke-width="2"/>
+              <rect x="25" y="11" width="3" height="3" fill="#080808"/>
+            </svg>
+            <span class="placeholder-text">[ ESPACIO PARA FOTO 04 ]</span>
+            <span class="placeholder-sub">Café &amp; Código · 4:3</span>
+          </div>
+          <div class="photo-frame-caption">
+            <strong class="photo-frame-title">Deep Work &amp; Refactor</strong>
+            <span class="photo-frame-meta">OFFICE // LAB</span>
+          </div>
+        </div>
+
+        <!-- Frame 05 -->
+        <div class="photo-frame-card">
+          <div class="photo-frame-header">
+            <span class="photo-frame-tag">FRAME_05</span>
+            <span>CERTIFICATION_DAY</span>
+          </div>
+          <div class="photo-placeholder-box">
+            <svg class="photo-icon-pixel" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+              <rect x="4" y="8" width="28" height="22" stroke="#080808" stroke-width="2" fill="none"/>
+              <rect x="8" y="4" width="8" height="4" fill="#080808"/>
+              <circle cx="18" cy="19" r="6" stroke="#080808" stroke-width="2"/>
+              <rect x="25" y="11" width="3" height="3" fill="#080808"/>
+            </svg>
+            <span class="placeholder-text">[ ESPACIO PARA FOTO 05 ]</span>
+            <span class="placeholder-sub">Logros &amp; Exámenes · 4:3</span>
+          </div>
+          <div class="photo-frame-caption">
+            <strong class="photo-frame-title">Hitos académicos</strong>
+            <span class="photo-frame-meta">KNOWLEDGE</span>
+          </div>
+        </div>
+
+        <!-- Frame 06 -->
+        <div class="photo-frame-card">
+          <div class="photo-frame-header">
+            <span class="photo-frame-tag">FRAME_06</span>
+            <span>PERSONAL_SPACE</span>
+          </div>
+          <div class="photo-placeholder-box">
+            <svg class="photo-icon-pixel" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+              <rect x="4" y="8" width="28" height="22" stroke="#080808" stroke-width="2" fill="none"/>
+              <rect x="8" y="4" width="8" height="4" fill="#080808"/>
+              <circle cx="18" cy="19" r="6" stroke="#080808" stroke-width="2"/>
+              <rect x="25" y="11" width="3" height="3" fill="#080808"/>
+            </svg>
+            <span class="placeholder-text">[ ESPACIO PARA FOTO 06 ]</span>
+            <span class="placeholder-sub">Hobbies &amp; Creatividad · 4:3</span>
+          </div>
+          <div class="photo-frame-caption">
+            <strong class="photo-frame-title">Fuera de pantalla</strong>
+            <span class="photo-frame-meta">LIFESTYLE</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="site-footer"><p>© <span data-year></span> André Rivera</p><div><a href="https://github.com/andreris" target="_blank" rel="noopener">https://github.com/andreris</a><a href="https://www.linkedin.com/in/andré-ricardo-rivera-0b0825246" target="_blank" rel="noopener">LinkedIn</a></div></footer>
 </body></html>
