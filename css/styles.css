@@ -31,9 +31,12 @@ body[data-page="home"] .theme-button{justify-self:auto}
 .portfolio-hero__inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.7fr);grid-template-areas:"copy coffee" "status status";grid-template-rows:auto auto;gap:42px 62px;align-items:center;align-content:center;width:min(1200px,calc(100% - 40px));min-height:calc(100vh - 76px);margin-inline:auto;padding:64px 20px 38px}
 .sql-intro{grid-area:copy;min-width:0}
 .sql-title{display:grid;gap:3px;margin:0;font:800 clamp(2rem,3.2vw,3.15rem)/1.08 Consolas,"Courier New",monospace;letter-spacing:-.075em}
-.sql-title span{display:block;white-space:nowrap}
+.sql-title span{display:flex;align-items:baseline;white-space:nowrap}
+.sql-line-num{display:inline-block;min-width:2.4ch;margin-right:.6ch;color:var(--sql-muted);font-size:.65em;letter-spacing:0;flex-shrink:0;user-select:none}
 .sql-title b,.sql-title i{display:inline-block;min-width:0;margin-right:.32em;font-style:normal;color:var(--sql-blue)}
 .sql-title i{color:var(--sql-muted)}
+.sql-cursor{display:inline-block;width:12px;height:1.1em;vertical-align:middle;background:var(--signal);margin-left:4px;animation:cursor-blink 1s step-end infinite}
+@keyframes cursor-blink{0%,100%{opacity:1}50%{opacity:0}}
 .sql-summary{max-width:610px;margin:24px 0 0;color:color-mix(in srgb,var(--home-ink) 65%,transparent);font-size:1rem}
 .hero-controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:76px}
 .console-button{min-height:48px;padding:0 20px;border:2px solid var(--home-ink);border-radius:0;background:var(--signal);color:#080808;font:800 .9rem/1 Consolas,monospace;cursor:pointer;box-shadow:none;transition:transform .18s ease,box-shadow .18s ease,background .3s ease}
@@ -157,8 +160,9 @@ body.dark .machine-feet i{background:#071018}
 
 /* Home lower sections: editorial data-system visual language */
 body[data-page="home"] main{background:var(--home-bg);color:var(--home-ink)}
-body[data-page="home"] .stats{background:#fbfbfa;border-color:#e4e3de}
-body[data-page="home"] .stats article{padding:34px 4%;border-color:#e4e3de}
+body[data-page="home"] .stats{background:transparent;border:2px solid var(--home-ink);box-shadow:6px 6px 0 var(--home-ink)}
+body[data-page="home"] .stats article{padding:34px 4%;border-right:2px solid var(--home-ink)}
+body[data-page="home"] .stats article:last-child{border-right:0}
 body[data-page="home"] .stats strong{color:var(--sql-blue);font:800 clamp(1.35rem,2.4vw,2rem)/1 Consolas,monospace}
 body[data-page="home"] .stats span{margin-top:7px;color:var(--home-ink);font-weight:700}
 
@@ -199,6 +203,9 @@ body[data-page="home"] .cta .button{background:#080808;color:var(--signal);borde
 body[data-page="home"] .site-footer{background:var(--home-bg);color:var(--home-ink);border-color:var(--home-ink);font-family:Consolas,monospace}
 
 @media(max-width:820px){
+  body[data-page="home"] .stats{box-shadow:5px 5px 0 var(--home-ink)}
+  body[data-page="home"] .stats article{border-right:0;border-bottom:2px solid var(--home-ink)}
+  body[data-page="home"] .stats article:last-child{border-bottom:0}
   body[data-page="home"] .section{padding-block:82px}
   body[data-page="home"] .section-heading{margin-bottom:46px}
   body[data-page="home"] .section-heading h2{font-size:clamp(2.7rem,12vw,5rem)}
