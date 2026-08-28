@@ -951,5 +951,4 @@ body.has-custom-cursor label{cursor:none}
 @media(prefers-reduced-motion:reduce){
   .marquee-track{animation:none}
 }
-.marquee-strip{margin-block:-110px}
-@media(max-width:820px){.marquee-strip{margin-block:-75px}}
+#proyectos-home{background:#fbfbfa}
