@@ -6,10 +6,17 @@ const themeButton = document.querySelector('.theme-button');
 const pages = { home: 'index.html', projects: 'proyectos.html', about: 'sobre-mi.html', studies: 'estudios.html', knowledge: 'knowledge.html', contact: 'contacto.html' };
 document.querySelectorAll('.site-nav a').forEach(link => {
   if (link.getAttribute('href') === pages[body.dataset.page]) link.classList.add('active');
+  link.addEventListener('click', () => {
+    navigation?.classList.remove('open');
+    body.classList.remove('menu-open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    if (menuButton) menuButton.textContent = '☰';
+  });
 });
 
 menuButton?.addEventListener('click', () => {
   const open = navigation.classList.toggle('open');
+  body.classList.toggle('menu-open', open);
   menuButton.setAttribute('aria-expanded', String(open));
   menuButton.textContent = open ? '✕' : '☰';
 });
@@ -17,6 +24,25 @@ menuButton?.addEventListener('click', () => {
 document.addEventListener('click', event => {
   if (navigation?.classList.contains('open') && !navigation.contains(event.target) && !menuButton?.contains(event.target)) {
     navigation.classList.remove('open');
+    body.classList.remove('menu-open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    if (menuButton) menuButton.textContent = '☰';
+  }
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && navigation?.classList.contains('open')) {
+    navigation.classList.remove('open');
+    body.classList.remove('menu-open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    if (menuButton) menuButton.textContent = '☰';
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 820 && navigation?.classList.contains('open')) {
+    navigation.classList.remove('open');
+    body.classList.remove('menu-open');
     menuButton?.setAttribute('aria-expanded', 'false');
     if (menuButton) menuButton.textContent = '☰';
   }
