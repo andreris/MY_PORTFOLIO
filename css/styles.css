@@ -1180,9 +1180,11 @@ body[data-page="knowledge"] .certificate-list article:hover{
 }
 body[data-page="knowledge"] .certificate-list article:last-child{border-bottom:0}
 body[data-page="knowledge"] .certificate-list p{margin:0 0 6px;color:var(--sql-blue);font:800 .7rem/1 Consolas,monospace;letter-spacing:.1em}
-body[data-page="knowledge"] .certificate-list h2{margin:0 0 6px;color:var(--page-ink);font:800 clamp(1.2rem,2.2vw,1.75rem)/1.15 Manrope,sans-serif}
+body[data-page="knowledge"] .certificate-list h2{margin:0;color:var(--page-ink);font:800 clamp(1.2rem,2.2vw,1.75rem)/1.15 Manrope,sans-serif}
 body[data-page="knowledge"] .certificate-list span{color:color-mix(in srgb,var(--page-ink) 65%,transparent);font-size:.85rem;font-family:Consolas,monospace}
 body[data-page="knowledge"] .cert-proof{
+  display:inline-flex;align-items:center;justify-content:center;
+  text-decoration:none;
   padding:10px 16px;border:2px solid var(--page-ink);border-radius:0;background:var(--signal);
   color:#080808;font:800 .75rem/1 Consolas,monospace;white-space:nowrap;
   box-shadow:3px 3px 0 var(--page-ink);
