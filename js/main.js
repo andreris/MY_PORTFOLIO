@@ -48,52 +48,9 @@ window.addEventListener('resize', () => {
   }
 });
 
-const runModeButton = document.querySelector('.run-mode');
-const themeStatus = document.querySelector('#theme-status');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-function renderTheme() {
-  const dark = body.classList.contains('dark');
-  localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
-  themeButton?.setAttribute('aria-pressed', String(dark));
-  runModeButton?.setAttribute('aria-pressed', String(dark));
-  if (runModeButton) runModeButton.textContent = dark ? '› Light mode' : '› Dark mode';
-  if (themeStatus) themeStatus.textContent = dark ? 'TRUE' : 'FALSE';
-}
-
-function setTheme(nextDark, animate = true, sourceButton = null) {
-  if (body.classList.contains('dark') === nextDark) {
-    renderTheme();
-    return;
-  }
-
-  const applyTheme = () => {
-    body.classList.toggle('dark', nextDark);
-    renderTheme();
-  };
-
-  if (!animate || reduceMotion.matches) {
-    applyTheme();
-    return;
-  }
-
-  const sourceRect = sourceButton?.getBoundingClientRect();
-  const originX = sourceRect ? sourceRect.left + sourceRect.width / 2 : window.innerWidth / 2;
-  const originY = sourceRect ? sourceRect.top + sourceRect.height / 2 : window.innerHeight / 2;
-
-  body.style.setProperty('--theme-wipe-x', originX + 'px');
-  body.style.setProperty('--theme-wipe-y', originY + 'px');
-  body.style.setProperty('--theme-wipe-color', nextDark ? '#071018' : '#e3decf');
-  body.classList.remove('theme-wipe');
-  void body.offsetWidth;
-  body.classList.add('theme-wipe');
-  window.setTimeout(applyTheme, 620);
-  window.setTimeout(() => body.classList.remove('theme-wipe'), 1020);
-}
-
-setTheme(localStorage.getItem('portfolio-theme') === 'dark', false);
-themeButton?.addEventListener('click', event => setTheme(!body.classList.contains('dark'), true, event.currentTarget));
-runModeButton?.addEventListener('click', event => setTheme(!body.classList.contains('dark'), true, event.currentTarget));
+try { localStorage.removeItem('portfolio-theme'); } catch (_) {}
+body.classList.remove('dark');
 
 document.querySelectorAll('[data-year]').forEach(element => element.textContent = new Date().getFullYear());
 

@@ -61,7 +61,6 @@
             </h1>
           </div>
           <div class="hero-controls">
-            <button class="console-button run-mode" type="button" aria-pressed="false">› Dark mode</button>
             <button class="console-button run-coffee" type="button">› Run coffee</button>
           </div>
         </div>
@@ -100,7 +99,6 @@
 
         <div class="runtime-status">
           <div>Hora Lima, Perú: <time id="lima-time">--/--/---- --:--:--</time></div>
-          <div>Dark_mode = <strong id="theme-status">FALSE</strong></div>
         </div>
       </div>
     </section>
@@ -124,21 +122,14 @@
       <article><strong>ISIL</strong><span>Estudios</span></article>
     </section>
 
-    <!-- Pipeline connecting lines between Stats & Stack -->
-    <div class="pipeline-bridge container reveal" aria-hidden="true">
-      <div class="pipeline-line pipe-left">
-        <span class="pipe-joint top"></span>
-        <span class="pipe-pulse"></span>
-        <span class="pipe-joint bottom"></span>
-      </div>
-      <div class="pipeline-center-badge">
-        <span class="pipeline-badge-icon">▼</span>
-        <span class="pipeline-badge-status">INGEST</span>
-      </div>
-      <div class="pipeline-line pipe-right">
-        <span class="pipe-joint top"></span>
-        <span class="pipe-pulse"></span>
-        <span class="pipe-joint bottom"></span>
+    <!-- Pipeline connector: INGESTA -->
+    <div class="pipeline-connector container reveal" aria-hidden="true">
+      <svg class="pipeline-snake-svg" viewBox="0 0 400 136" preserveAspectRatio="none" fill="none">
+        <path class="pipeline-snake-track" d="M 200 0 L 200 18 Q 200 30 185 30 L 55 30 Q 30 30 30 52 L 30 54 Q 30 68 55 68 L 345 68 Q 370 68 370 82 L 370 84 Q 370 106 345 106 L 215 106 Q 200 106 200 118 L 200 136" vector-effect="non-scaling-stroke"/>
+        <path class="pipeline-snake-glow" d="M 200 0 L 200 18 Q 200 30 185 30 L 55 30 Q 30 30 30 52 L 30 54 Q 30 68 55 68 L 345 68 Q 370 68 370 82 L 370 84 Q 370 106 345 106 L 215 106 Q 200 106 200 118 L 200 136" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <div class="pipeline-connector-label">
+        <span class="pipeline-label-text">INGESTA</span>
       </div>
     </div>
 
@@ -163,21 +154,14 @@
       </div>
     </section>
 
-    <!-- Pipeline connecting lines between Stack & Proyectos -->
-    <div class="pipeline-bridge container reveal" aria-hidden="true">
-      <div class="pipeline-line pipe-left">
-        <span class="pipe-joint top"></span>
-        <span class="pipe-pulse"></span>
-        <span class="pipe-joint bottom"></span>
-      </div>
-      <div class="pipeline-center-badge">
-        <span class="pipeline-badge-icon">▼</span>
-        <span class="pipeline-badge-status">PROCESSING</span>
-      </div>
-      <div class="pipeline-line pipe-right">
-        <span class="pipe-joint top"></span>
-        <span class="pipe-pulse"></span>
-        <span class="pipe-joint bottom"></span>
+    <!-- Pipeline connector: PROCESAMIENTO -->
+    <div class="pipeline-connector container reveal" aria-hidden="true">
+      <svg class="pipeline-snake-svg" viewBox="0 0 400 136" preserveAspectRatio="none" fill="none">
+        <path class="pipeline-snake-track" d="M 200 0 L 200 18 Q 200 30 185 30 L 55 30 Q 30 30 30 52 L 30 54 Q 30 68 55 68 L 345 68 Q 370 68 370 82 L 370 84 Q 370 106 345 106 L 215 106 Q 200 106 200 118 L 200 136" vector-effect="non-scaling-stroke"/>
+        <path class="pipeline-snake-glow" d="M 200 0 L 200 18 Q 200 30 185 30 L 55 30 Q 30 30 30 52 L 30 54 Q 30 68 55 68 L 345 68 Q 370 68 370 82 L 370 84 Q 370 106 345 106 L 215 106 Q 200 106 200 118 L 200 136" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <div class="pipeline-connector-label">
+        <span class="pipeline-label-text">PROCESAMIENTO</span>
       </div>
     </div>
 
@@ -191,21 +175,14 @@
       <a class="projects-more reveal" href="proyectos.html">Ver todos →</a>
     </section>
 
-    <!-- Pipeline connecting lines between Proyectos & Aprendizaje continuo -->
-    <div class="pipeline-bridge container reveal" aria-hidden="true">
-      <div class="pipeline-line pipe-left">
-        <span class="pipe-joint top"></span>
-        <span class="pipe-pulse"></span>
-        <span class="pipe-joint bottom"></span>
-      </div>
-      <div class="pipeline-center-badge">
-        <span class="pipeline-badge-icon">▼</span>
-        <span class="pipeline-badge-status">TRANSFORM</span>
-      </div>
-      <div class="pipeline-line pipe-right">
-        <span class="pipe-joint top"></span>
-        <span class="pipe-pulse"></span>
-        <span class="pipe-joint bottom"></span>
+    <!-- Pipeline connector: TRANSFORMACIÓN -->
+    <div class="pipeline-connector container reveal" aria-hidden="true">
+      <svg class="pipeline-snake-svg" viewBox="0 0 400 136" preserveAspectRatio="none" fill="none">
+        <path class="pipeline-snake-track" d="M 200 0 L 200 18 Q 200 30 185 30 L 55 30 Q 30 30 30 52 L 30 54 Q 30 68 55 68 L 345 68 Q 370 68 370 82 L 370 84 Q 370 106 345 106 L 215 106 Q 200 106 200 118 L 200 136" vector-effect="non-scaling-stroke"/>
+        <path class="pipeline-snake-glow" d="M 200 0 L 200 18 Q 200 30 185 30 L 55 30 Q 30 30 30 52 L 30 54 Q 30 68 55 68 L 345 68 Q 370 68 370 82 L 370 84 Q 370 106 345 106 L 215 106 Q 200 106 200 118 L 200 136" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <div class="pipeline-connector-label">
+        <span class="pipeline-label-text">TRANSFORMACIÓN</span>
       </div>
     </div>
 
@@ -233,16 +210,14 @@
       <a class="cert-more reveal" href="knowledge.html">Ver más certificaciones →</a>
     </section>
 
-    <!-- Pipeline connecting lines between Aprendizaje continuo & Conversemos -->
-    <div class="pipeline-bridge pipeline-bridge--single container reveal" aria-hidden="true">
-      <div class="pipeline-line pipe-center">
-        <span class="pipe-joint top"></span>
-        <span class="pipe-pulse"></span>
-        <span class="pipe-joint bottom"></span>
-      </div>
-      <div class="pipeline-center-badge">
-        <span class="pipeline-badge-icon">▼</span>
-        <span class="pipeline-badge-status">DELIVER</span>
+    <!-- Pipeline connector: ENTREGA -->
+    <div class="pipeline-connector container reveal" aria-hidden="true">
+      <svg class="pipeline-snake-svg" viewBox="0 0 400 136" preserveAspectRatio="none" fill="none">
+        <path class="pipeline-snake-track" d="M 200 0 L 200 18 Q 200 30 185 30 L 55 30 Q 30 30 30 52 L 30 54 Q 30 68 55 68 L 345 68 Q 370 68 370 82 L 370 84 Q 370 106 345 106 L 215 106 Q 200 106 200 118 L 200 136" vector-effect="non-scaling-stroke"/>
+        <path class="pipeline-snake-glow" d="M 200 0 L 200 18 Q 200 30 185 30 L 55 30 Q 30 30 30 52 L 30 54 Q 30 68 55 68 L 345 68 Q 370 68 370 82 L 370 84 Q 370 106 345 106 L 215 106 Q 200 106 200 118 L 200 136" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <div class="pipeline-connector-label">
+        <span class="pipeline-label-text">ENTREGA</span>
       </div>
     </div>
 
